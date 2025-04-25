@@ -1,19 +1,21 @@
 package main
 
 import (
-	"log"
+	"log/slog"
 	"net/http"
 )
 
-func logHandler(h http.Handler) http.Handler {
+func httpLogHandler(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
 		rw := responseWriter{
 			ResponseWriter: res,
 		}
 		h.ServeHTTP(&rw, req)
-		log.Println("[http]",
-			req.Method, req.URL.String(),
-			rw.status, http.StatusText(rw.status),
+		slog.Info("http request",
+			"method", req.Method,
+			"url", req.URL.String(),
+			"status", rw.status,
+			"status_text", http.StatusText(rw.status),
 		)
 	})
 }
