@@ -1,5 +1,7 @@
 module github.com/gobwas/goproxyd
 
-go 1.13
+go 1.24
 
-require github.com/goproxy/goproxy v0.0.0-20200107124007-93d07b5deef8
+require github.com/goproxy/goproxy v0.20.0
+
+require golang.org/x/mod v0.24.0 // indirect

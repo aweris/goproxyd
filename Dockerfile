@@ -1,4 +1,4 @@
-FROM golang:1.13.6-alpine
+FROM golang:1.24-alpine
 
 WORKDIR /go/src/goproxy
 
