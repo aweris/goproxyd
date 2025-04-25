@@ -1,6 +1,6 @@
 # goproxyd
 
-> Go modules proxy daemon
+> Go modules proxy daemon with additional features
 
 # About
 
@@ -23,7 +23,7 @@ build`):
 ```
 $ docker build -t goproxyd .
 $ docker network create goproxyd
-$ docker run -it --rm --name goproxyd --network goproxyd --publish 8080:8080 -v $GOPATH/pkg/mod/cache:/cache goproxyd
+$ docker run -it --rm --name goproxyd --publish 8080:8080 -v $GOPATH/pkg/mod/cache:/cache goproxyd
 ```
 
 After this you can build you program docker:
@@ -32,4 +32,4 @@ After this you can build you program docker:
 docker build --network goproxyd --build-arg GOPROXY=http://goproxyd:8080 --build-arg GONOSUMDB=github.com/your-org-here . 
 ```
 
-
+This project is based on the original work by [gobwas/goproxyd](https://github.com/gobwas/goproxyd)
