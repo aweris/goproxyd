@@ -1,6 +1,8 @@
 # goproxyd
 
-> Go modules proxy daemon with additional features
+> A fork of [gobwas/goproxyd](https://github.com/gobwas/goproxyd) - Go modules proxy daemon with additional features
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # About
 
@@ -32,4 +34,8 @@ After this you can build you program docker:
 docker build --network goproxyd --build-arg GOPROXY=http://goproxyd:8080 --build-arg GONOSUMDB=github.com/your-org-here . 
 ```
 
-This project is based on the original work by [gobwas/goproxyd](https://github.com/gobwas/goproxyd)
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Based on the original work by [gobwas/goproxyd](https://github.com/gobwas/goproxyd)
